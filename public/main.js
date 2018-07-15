@@ -8,8 +8,7 @@ $(document).ready(function() {
             var usrInput = $("#todoInput").val() ;
             $.post("/api/todos" , { name : usrInput } )
              .then(function(todo){ 
-                 var newTodo = '<li class="task">' + todo.name + '<span> X </span>  </li>'; 
-                 newTodo.data('id' , todo._id) ;
+                 var newTodo = '<li class="task">' + todo.name + '<span> <i class="fas fa-trash"></i> </span>  </li>';                  newTodo.data('id' , todo._id) ;
                  newTodo.data('completed' , todo.completed) ;
 
                     if(todo.completed) { 
@@ -42,7 +41,7 @@ $(document).ready(function() {
 
 function addTodos (todos) {
     todos.forEach(function(todo) { 
-        var newTodo = $('<li class="task" >' + todo.name + '<span> X </span> </li>') ; 
+        var newTodo = $('<li class="task" >' + todo.name + '<span> <i class="fas fa-trash"></i>   </span> </li>') ; 
         newTodo.data('id' , todo._id) ;
         newTodo.data('completed' , todo.completed) ;
 

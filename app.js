@@ -17,4 +17,4 @@ res.sendFile("index.html");
 
 
 app.use("/api/todos" , todoRoutes) ;
-app.listen(port);
+app.listen(port , () => console.log("SERVER HAS STARTED , CHECK  " + port) );
